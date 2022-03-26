@@ -111,5 +111,8 @@
       "name": "ContentTooLong",
       "msg": "The provided content should be 280 characters long maximum."
     }
-  ]
+  ],
+  "metadata": {
+    "address": "3dX1z4kEhVMZmJeEEae2YKXYHVkLeNLmLHcswoWVS1Wo"
+  }
 }

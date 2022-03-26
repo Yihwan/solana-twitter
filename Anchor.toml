@@ -2,10 +2,10 @@
 seeds = false
 
 [programs.localnet]
-solana_twitter = "5n9gkRjF6jyyRfEoyibaD99PcnqegWpG4CJwg5ZdWahX"
+solana_twitter = "3dX1z4kEhVMZmJeEEae2YKXYHVkLeNLmLHcswoWVS1Wo"
 
 [programs.devnet]
-solana_twitter = "5n9gkRjF6jyyRfEoyibaD99PcnqegWpG4CJwg5ZdWahX"
+solana_twitter = "3dX1z4kEhVMZmJeEEae2YKXYHVkLeNLmLHcswoWVS1Wo"
 
 [registry]
 url = "https://anchor.projectserum.com"
