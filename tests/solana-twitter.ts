@@ -12,7 +12,7 @@ describe("solana-twitter", () => {
   it('can send a new tweet', async () => {
     const tweet = anchor.web3.Keypair.generate();
 
-    await program.rpc.sendTweet('TOPIC', 'CONTENT', {
+    await program.rpc.sendTweet('exampletopic', 'CONTENT', {
       accounts: {
         tweet: tweet.publicKey,
         author: program.provider.wallet.publicKey,
@@ -24,7 +24,7 @@ describe("solana-twitter", () => {
     const tweetAccount = await program.account.tweet.fetch(tweet.publicKey);
 
     assert.equal(tweetAccount.author.toBase58(), program.provider.wallet.publicKey.toBase58());
-    assert.equal(tweetAccount.topic, 'TOPIC');
+    assert.equal(tweetAccount.topic, 'exampletopic');
     assert.equal(tweetAccount.content, 'CONTENT');
     assert.ok(tweetAccount.timestamp);
   });
@@ -123,12 +123,12 @@ describe("solana-twitter", () => {
                     32 + // Author public key.
                     8 + // Timestamp.
                     4, // Topic string prefix.
-                bytes: bs58.encode(Buffer.from('TOPIC')), 
+                bytes: bs58.encode(Buffer.from('exampletopic')), 
             }
         }
     ]);    
 
     assert.equal(tweetAccounts.length, 1);
-    assert.equal(tweetAccounts[0].account.topic, 'TOPIC');
+    assert.equal(tweetAccounts[0].account.topic, 'exampletopic');
   })
 });
